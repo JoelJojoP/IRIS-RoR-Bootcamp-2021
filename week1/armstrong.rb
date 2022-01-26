@@ -1,13 +1,24 @@
-# An n-digit number that is the sum of the nth powers of its digits is called an n-narcissistic number. It is also known as an Armstrong number.
-#
-# For example,
-# 153 = 1^3 + 5^3 + 3^3
-#
-# `n` is a number provided to you as input.
-#
-# Your output should be `true` if the number is an Armstrong number
-# and `false` otherwise.
-
 def armstrong_number(n)
-    raise NotImplementedError # Delete this line and start coding here
+    t = n
+    t2 = n
+    digit = 0
+    while t>0
+        digit = digit+1
+        t = Integer(t/10)
+    end
+    sum = 0
+    while t2>0
+        d = t2%10
+        sum = sum + (d**digit)
+        t2 = Integer(t2/10)
+    end
+    if sum==n
+        return true
+    else
+        return false
+    end
 end
+
+num = gets.chomp
+numint = Integer(num)
+puts armstrong_number(numint)
