@@ -18,7 +18,3 @@ def armstrong_number(n)
         return false
     end
 end
-
-num = gets.chomp
-numint = Integer(num)
-puts armstrong_number(numint)
